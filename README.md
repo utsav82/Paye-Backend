@@ -24,8 +24,8 @@ Paye is a simple and intuitive expense-tracking application designed to help use
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/expense-tracker-app.git
-   cd expense-tracker-app
+   git clone https://github.com/utsav82/Paye-Backend/
+   cd Paye-Backend
    ```
 
 2. **Install Dependencies:**
@@ -45,7 +45,7 @@ Paye is a simple and intuitive expense-tracking application designed to help use
 
 5. **API Endpoints:**
    - User-related endpoints: `/users`
-   - Group-related endpoints: `//groups`
+   - Group-related endpoints: `/groups`
    - Expense-related endpoints: `/expenses`
    - User-Group relationship endpoints: `/usergroup`
    - Expense-Share relationship endpoints: `/expenseshare`
