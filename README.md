@@ -61,8 +61,6 @@ For detailed API documentation and usage examples, refer to the [API Documentati
 - MongoDB
 - Mongoose
 
-Certainly! Below is a simplified to-do list for your expense-tracking app:
-
 ## To-Do List
 
 - [ ] Implement email verification for new user accounts.
