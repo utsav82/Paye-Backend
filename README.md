@@ -60,7 +60,6 @@ For detailed API documentation and usage examples, refer to the [API Documentati
 - Express.js
 - MongoDB
 - Mongoose
-- ...
 
 ## Contributing
 
