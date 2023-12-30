@@ -24,11 +24,11 @@ server.get("/", (req, res) => {
   res.send("okay");
 });
 server.use(auth);
-server.use("/api", userRoutes);
-server.use("/api", groupRoutes);
-server.use("/api", userGroupRoutes);
-server.use("/api", expenseRoutes);
-server.use("/api", expenseShareRoutes);
+server.use("/users", userRoutes);
+server.use("/groups", groupRoutes);
+server.use("/usergroup", userGroupRoutes);
+server.use("/expenses", expenseRoutes);
+server.use("/expenseshare", expenseShareRoutes);
 
 server.listen(process.env.PORT || 3000, () => {
   console.log("server started");
