@@ -1,13 +1,15 @@
 const Expense = require("../model/expense");
-
+const path = require("path");
 const createExpense = async (req, res) => {
   try {
+    req.body.image = path.join("/static/img/", `${req.file.filename}`);
     const newExpense = await Expense.create(req.body);
     res.status(201).json(newExpense);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
+
 
 const getAllExpenses = async (req, res) => {
   try {

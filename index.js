@@ -9,7 +9,8 @@ const groupRoutes = require("./routes/group");
 const userGroupRoutes = require("./routes/userGroup");
 const expenseRoutes = require("./routes/expense");
 const expenseShareRoutes = require("./routes/expenseShare");
-const auth = require("./utilities/middleware");
+const { auth }= require("./utilities/middleware");
+
 main().catch((err) => console.log(err));
 
 async function main() {
@@ -18,12 +19,13 @@ async function main() {
 }
 
 server.use(cors());
+server.use(auth);
 server.use(express.json());
-server.use(bodyParser.urlencoded({ extended: true }));
+server.use(bodyParser.urlencoded({ extended: false }));
 server.get("/", (req, res) => {
   res.send("okay");
 });
-server.use(auth);
+
 server.use("/users", userRoutes);
 server.use("/groups", groupRoutes);
 server.use("/usergroup", userGroupRoutes);

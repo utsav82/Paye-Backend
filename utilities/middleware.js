@@ -1,4 +1,4 @@
-
+const multer = require("multer");
 const jwt = require("jsonwebtoken");
 const auth = (req, res, next) => {
   try {
@@ -16,4 +16,15 @@ const auth = (req, res, next) => {
   console.log(decoded);
 };
 
-module.exports = auth;
+var storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "public/img");
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
+
+var upload = multer({ storage: storage });
+
+module.exports = {auth,upload};
