@@ -12,6 +12,11 @@ const expenseShareSchema = new mongoose.Schema({
     required: true,
   },
   share_amount: { type: Number, required: true },
+  status: {
+    type: string,
+    enum: ["paid", "unpaid", "pending"],
+    default: "unpaid",
+  },
 });
 
 const ExpenseShare = mongoose.model("ExpenseShare", expenseShareSchema);
