@@ -4,7 +4,6 @@ const expenseSchema = new mongoose.Schema({
   group_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Group",
-    required: true,
   },
   payer_id: {
     type: mongoose.Schema.Types.ObjectId,

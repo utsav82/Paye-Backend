@@ -1,8 +1,14 @@
 const Group = require("../model/group");
 
 const createGroup = async (req, res) => {
+  const { group_name, creator_id } = req.body;
   try {
-    const newGroup = await Group.create(req.body);
+    const newGroup = await Group.create({ group_name });
+    await UserGroup.create({
+      user_id: creator_id,
+      group_id: newGroup._id,
+    });
+
     res.status(201).json(newGroup);
   } catch (error) {
     res.status(500).json({ error: error.message });

@@ -11,6 +11,11 @@ const expenseShareSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
+  payer_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
   share_amount: { type: Number, required: true },
   status: {
     type: string,
